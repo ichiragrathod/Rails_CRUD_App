@@ -1,0 +1,29 @@
+<h1> Employees Listing Page!!!</h1>
+
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Tech</th>
+            <th colspan="3">Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @employees.each do |employee| %>
+        <tr>
+            <td><%= employee.name%></td>
+            <td><%= employee.city%></td>
+            <td><%= employee.tech%></td> 
+            <td><%= link_to 'Show', employee_path(employee.id)%></td>
+            <td><%= link_to 'Edit', edit_employee_path(employee.id)%></td>
+            <td><%= link_to 'Delete', empdelete_path(employee.id), data: { turbo_confirm: "Are you sure?" } , method: :delete %> </td>
+        </tr>
+    <%  end %>   
+    </tbody>
+</table>
+<p>
+<%= link_to 'Add New Employee', new_employee_path %>
+</p>

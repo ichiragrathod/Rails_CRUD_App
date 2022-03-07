@@ -1,0 +1,9 @@
+<h1> Showing Employees Details</h1>
+<br>
+<p> <strong>Name: </strong><%= @employee.name%></p>
+<p> <strong>City: </strong><%=@employee.city%></p>
+<p> <strong>Tech: </strong><%= @employee.tech%></p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Delete', empdelete_path(@employee.id), method: :delete, data: { confirm: "Are you sure?" } %> |
+<%= link_to 'Return to employee listing', employees_path%>
